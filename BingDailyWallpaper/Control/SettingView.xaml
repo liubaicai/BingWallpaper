@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="BingDailyWallpaper.Control.SettingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BingDailyWallpaper.Control"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uwp="using:BaicaiAppService.SDK.UWP"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="10,20">
+            <TextBlock FontSize="25" Foreground="Gray" Text="每日Bing图片"></TextBlock>
+            <Border Height="5"></Border>
+            <TextBlock FontSize="18" Foreground="#FFAAAAAA" Text="应用反馈Q群:373715806"></TextBlock>
+            <Border Height="10"></Border>
+            <StackPanel Orientation="Horizontal">
+                <ToggleSwitch IsOn="{Binding SetLockScreen,Mode=TwoWay}" Header="设为锁屏图片"
+                              Foreground="White" Style="{StaticResource ToggleSwitchStyle}" Margin="0,0,0,-5" OffContent="否" OnContent="是"/>
+                <Border Width="20"></Border>
+                <ToggleSwitch IsOn="{Binding SetWallpaper,Mode=TwoWay}" Header="设为桌面壁纸" 
+                              Foreground="White" Style="{StaticResource ToggleSwitchStyle}" Margin="0,0,0,-5" OffContent="否" OnContent="是"/>
+            </StackPanel>
+            <ToggleSwitch IsOn="{Binding AutoSaveToLib,Mode=TwoWay}" Header="浏览时保存图片到图片库" 
+                              Foreground="White" Style="{StaticResource ToggleSwitchStyle}" Margin="0,0,0,-5" OffContent="否" OnContent="是"/>
+            <Border Height="5"></Border>
+            <uwp:AppListView Margin="-10,0" Foreground="#FFDDDDDD"/>
+        </StackPanel>
+    </Grid>
+</Page>
