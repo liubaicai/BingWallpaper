@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>LoveD.Wallpaper</value>
+  </data>
+  <data name="AboutContent1" xml:space="preserve">
+    <value>Select the picture,and Set me as background</value>
+  </data>
+  <data name="AboutContent2" xml:space="preserve">
+    <value>to automatically change wallpaper,</value>
+  </data>
+  <data name="AboutContent3" xml:space="preserve">
+    <value>Make more brilliant screen~</value>
+  </data>
+  <data name="AboutContentHaopingTitle" xml:space="preserve">
+    <value>Give praise chant</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MainBackNotice" xml:space="preserve">
+    <value>Press "Back" one more time to exit</value>
+  </data>
+  <data name="MainClearImage" xml:space="preserve">
+    <value>Clean all?</value>
+  </data>
+  <data name="MainClearImageDown" xml:space="preserve">
+    <value>Clean completed~</value>
+  </data>
+  <data name="MainContentNotice1" xml:space="preserve">
+    <value>NOTICE:</value>
+  </data>
+  <data name="MainContentNotice10" xml:space="preserve">
+    <value>can't to change wallpaper</value>
+  </data>
+  <data name="MainContentNotice11" xml:space="preserve">
+    <value>Due to system limitations,</value>
+  </data>
+  <data name="MainContentNotice12" xml:space="preserve">
+    <value>the time of wallpaper change</value>
+  </data>
+  <data name="MainContentNotice13" xml:space="preserve">
+    <value>deviation.</value>
+  </data>
+  <data name="MainContentNotice14" xml:space="preserve">
+    <value>So sorry to perplex  everyone,</value>
+  </data>
+  <data name="MainContentNotice15" xml:space="preserve">
+    <value>So sorry</value>
+  </data>
+  <data name="MainContentNotice16" xml:space="preserve">
+    <value>i will do better</value>
+  </data>
+  <data name="MainContentNotice17" xml:space="preserve">
+    <value>for everyone~</value>
+  </data>
+  <data name="MainContentNotice2" xml:space="preserve">
+    <value>Because the system settings</value>
+  </data>
+  <data name="MainContentNotice3" xml:space="preserve">
+    <value>when open</value>
+  </data>
+  <data name="MainContentNotice4" xml:space="preserve">
+    <value>"Battery Saver"</value>
+  </data>
+  <data name="MainContentNotice5" xml:space="preserve">
+    <value>more task</value>
+  </data>
+  <data name="MainContentNotice6" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="MainContentNotice7" xml:space="preserve">
+    <value>dormant for a long time</value>
+  </data>
+  <data name="MainContentNotice8" xml:space="preserve">
+    <value>and so on,</value>
+  </data>
+  <data name="MainContentNotice9" xml:space="preserve">
+    <value>task can't start,</value>
+  </data>
+  <data name="MainImageTooMore" xml:space="preserve">
+    <value>List of wallpaper is too more~</value>
+  </data>
+  <data name="MainLaunchNotice" xml:space="preserve">
+    <value>Remember to starting me every two weeks~</value>
+  </data>
+  <data name="OneKeyContent1" xml:space="preserve">
+    <value>You can start the 'Change wallpaper' tile</value>
+  </data>
+  <data name="OneKeyContent2" xml:space="preserve">
+    <value>Or hold "Home" to say "change wallpaper"</value>
+  </data>
+  <data name="OneKeyContent3" xml:space="preserve">
+    <value>to change wallpaper</value>
+  </data>
+  <data name="OneKeyTitle" xml:space="preserve">
+    <value>Onekey change wallpaper</value>
+  </data>
+  <data name="PicsAddContent1" xml:space="preserve">
+    <value>Select to add,  select to delete again~</value>
+  </data>
+  <data name="PicsAddContent2" xml:space="preserve">
+    <value>W/H of your screen is</value>
+  </data>
+  <data name="PicsAddContent3" xml:space="preserve">
+    <value>,choose similar~</value>
+  </data>
+  <data name="PicsFoldersTitle" xml:space="preserve">
+    <value>Folders</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="SettingFangshi1" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="SettingFangshi2" xml:space="preserve">
+    <value>Sequential</value>
+  </data>
+  <data name="SettingFangshiTitle" xml:space="preserve">
+    <value>Switching mode</value>
+  </data>
+  <data name="SettingGoToAbout" xml:space="preserve">
+    <value>"About" is a must it?</value>
+  </data>
+  <data name="SettingPinlvTitle" xml:space="preserve">
+    <value>Switching frequency</value>
+  </data>
+  <data name="SettingSetLockFail" xml:space="preserve">
+    <value>Press "OK" to automatically change wallpaper~</value>
+  </data>
+  <data name="SettingSetLockTitle" xml:space="preserve">
+    <value>Set as lockscreen</value>
+  </data>
+  <data name="SettingTime1" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="SettingTime12" xml:space="preserve">
+    <value>12 hour</value>
+  </data>
+  <data name="SettingTime3" xml:space="preserve">
+    <value>3 hour</value>
+  </data>
+  <data name="SettingTime30" xml:space="preserve">
+    <value>30 minute</value>
+  </data>
+  <data name="SettingTime6" xml:space="preserve">
+    <value>6 hour</value>
+  </data>
+  <data name="SettingTitle" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="SettingTuijianTitle" xml:space="preserve">
+    <value>Boutique applications recommended:</value>
+  </data>
+  <data name="OneKeyPinTitle" xml:space="preserve">
+    <value>Change wallpaper</value>
+  </data>
+  <data name="OneKeyNoSetNotice" xml:space="preserve">
+    <value>Set me as background to automatically change wallpaper~</value>
+  </data>
+  <data name="PageDown" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="PageUp" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="TaskErrToast1" xml:space="preserve">
+    <value>Background task is disabled or exceeded the number ,the lock screen will not be updated ~</value>
+  </data>
+  <data name="TaskErrToast2" xml:space="preserve">
+    <value>Goto&lt;Settings-applications-background tasks&gt;to set it~</value>
+  </data>
+  <data name="TaskNotice" xml:space="preserve">
+    <value>For periodic replacement of wallpaper. Remember once every two weeks starting oh ~</value>
+  </data>
+  <data name="AboutContentHaopingContent" xml:space="preserve">
+    <value>Use for so long, so give praise chant pro~</value>
+  </data>
+  <data name="ModelFenbianlv" xml:space="preserve">
+    <value>Resolution:</value>
+  </data>
+  <data name="ModelKuangaobi" xml:space="preserve">
+    <value>W/H:</value>
+  </data>
+  <data name="OneKeyContent4" xml:space="preserve">
+    <value>(This page will not appear next)</value>
+  </data>
+  <data name="MainContentItemAddTime" xml:space="preserve">
+    <value>addtime:</value>
+  </data>
+</root>

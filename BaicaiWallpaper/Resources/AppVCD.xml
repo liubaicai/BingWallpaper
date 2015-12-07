@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="zh-cn">
+    <CommandPrefix>换</CommandPrefix>
+    <Example> 更换壁纸 </Example>
+
+    <Command Name="壁纸">
+      <Example> 壁纸 </Example>
+      <ListenFor> 壁纸 </ListenFor>
+      <ListenFor> 壁子 </ListenFor>
+      <Feedback> 正在换壁纸... </Feedback>
+      <Navigate Target="/OneKeyChange.xaml" />
+    </Command>
+
+  </CommandSet>
+  
+  <CommandSet xml:lang="en">
+    <CommandPrefix>change</CommandPrefix>
+    <Example> change wallpaper </Example>
+
+    <Command Name="wallpaper">
+      <Example> wallpaper </Example>
+      <ListenFor> wallpaper </ListenFor>
+      <Feedback> Now todo... </Feedback>
+      <Navigate Target="/OneKeyChange.xaml" />
+    </Command>
+
+  </CommandSet>
+</VoiceCommands>
+
+<!-- 示例-->
+<!--
+
+    前面的示例演示一个名为“Contoso ROD3O!”的假想游戏，其中定义两个
+    命令，用户可以通过说出这些命令来开始新游戏或重玩游戏中三个关卡中的某一关。
+    若要启动 PlayGame 命令，用户可以说“Contoso Rodeo play a new game”或“Contoso Rodeo
+    play new game”。这两个短语均可开始新的游戏。若要启动另一个命令，用户可以说
+    “Contoso Rodeo replay level one”、“Contoso Rodeo replay level two”或“Contoso Rodeo replay level
+    three”。
+    第二个命令演示如何在命令中使用 PhraseList。PhraseList 可由
+    应用程序动态更新(例如，如果用户解锁新的关卡、游戏或功能，则您可能
+    需要允许用户在已注册语音命令后提供用于新功能的命令。)
+    第三个命令演示 {*} 序列如何可以与其他命令并行，以识别 CommandSet 中
+    未定义的语音。
+
+  注意:
+
+      [and] 指示“and”为可选项。使此类连接词成为可选项
+            可以帮助轻松读出“Contoso Rodeo, play new game”和“open Contoso Rodeo and play
+            a new game”。
+                 
+      {number} 与命令分开定义，映射到“one”、“two”或“three”。
+
+-->
