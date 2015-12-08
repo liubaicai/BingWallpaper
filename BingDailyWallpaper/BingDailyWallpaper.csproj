@@ -105,7 +105,6 @@
     </Compile>
     <Compile Include="Control\StorageImage.cs" />
     <Compile Include="Helper\HtmlCacheHelper.cs" />
-    <Compile Include="Helper\PlatformHelper.cs" />
     <Compile Include="Control\PopupFrame.cs" />
     <Compile Include="Control\SettingView.xaml.cs">
       <DependentUpon>SettingView.xaml</DependentUpon>

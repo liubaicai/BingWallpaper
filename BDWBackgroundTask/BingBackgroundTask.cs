@@ -28,9 +28,17 @@ namespace BDWBackgroundTask
                     RegexOptions.IgnoreCase | RegexOptions.Singleline);
                 foreach (Match match in regEx.Matches(str))
                 {
-                    var url = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
-                    Debug.WriteLine("============" + url);
-                    var filename = url.Split('/').Last();
+                    string Url;
+                    if (PlatformHelper.IsMobile)
+                    {
+                        Url = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_720x1280.jpg";
+                    }
+                    else
+                    {
+                        Url = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
+                    }
+                    Debug.WriteLine("============" + Url);
+                    var filename = Url.Split('/').Last();
                     StorageFolder storageFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Images", CreationCollisionOption.OpenIfExists);
                     var b = await IsFileExist(storageFolder, filename);
                     if (!b)
@@ -38,7 +46,7 @@ namespace BDWBackgroundTask
                         Debug.WriteLine("=====DownLoadImage");
                         var tmpfile = await storageFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
                         var http = new HttpClient();
-                        var data = await http.GetByteArrayAsync(url);
+                        var data = await http.GetByteArrayAsync(Url);
                         await FileIO.WriteBytesAsync(tmpfile, data);
                     }
                     var file = await storageFolder.GetFileAsync(filename);
@@ -49,7 +57,7 @@ namespace BDWBackgroundTask
                             Debug.WriteLine("=====DownLoadImage");
                             var tmpfile = await storageFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
                             var http = new HttpClient();
-                            var data = await http.GetByteArrayAsync(url);
+                            var data = await http.GetByteArrayAsync(Url);
                             await FileIO.WriteBytesAsync(tmpfile, data);
                         }
                     }

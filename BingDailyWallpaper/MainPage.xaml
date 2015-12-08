@@ -22,16 +22,41 @@
             <StackPanel VerticalAlignment="Bottom" Margin="10" Background="#19000000" HorizontalAlignment="Right">
                 <HyperlinkButton x:Name="CopyrightLink" HorizontalAlignment="Right" Padding="0" Foreground="White" FontSize="10"></HyperlinkButton>
             </StackPanel>
+
+            <Grid Background="#7F808080" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <AppBarButton Click="BackButtonOnClick" Width="40" Margin="-10,0,-10,0" Height="100" Foreground="White" Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe UI Black" Glyph="&#x003C;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </Grid>
+            <Grid Background="#7F808080" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <AppBarButton Click="ForwardButtonOnClick" Width="40" Margin="-10,0,-10,0" Height="100" Foreground="White" Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe UI Black" Glyph="&#x003E;"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </Grid>
         </Grid>
 
         <Grid Row="1" x:Name="PanelGrid" VerticalAlignment="Bottom" Background="#4C808080">
             <StackPanel x:Name="PanelStack" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Margin="0,0,0,0" Orientation="Horizontal">
-                <AppBarButton VerticalAlignment="Center" Click="FirstButtonOnClick" Width="50" Icon="Previous" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
+                <AppBarButton VerticalAlignment="Center" Click="FirstButtonOnClick" Width="50" Icon="Home" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
                 <Border Width="5" Height="5"></Border>
-                <AppBarButton VerticalAlignment="Center" Click="BackButtonOnClick" Width="50" Icon="Back" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
+                <!--<AppBarButton VerticalAlignment="Center" Click="BackButtonOnClick" Width="50" Icon="Back" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
                 <Border Width="5" Height="5"></Border>
                 <AppBarButton VerticalAlignment="Center" Click="ForwardButtonOnClick" Width="50" Icon="Forward" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
-                <Border Width="5" Height="5"></Border>
+                <Border Width="5" Height="5"></Border>-->
+                <AppBarButton VerticalAlignment="Center" Click="SetLockOnClick" Width="50" Foreground="White" Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="DengXian" Glyph="锁"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton VerticalAlignment="Center" Click="SetWallPaperOnClick" Width="50" Foreground="White" Style="{StaticResource AppBarButtonStyle}">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="DengXian" Glyph="壁"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
                 <AppBarButton VerticalAlignment="Center" Click="DownLoadButtonOnClick" Width="50" Icon="Download" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
                 <AppBarButton VerticalAlignment="Center" Click="MarktReviewButtonOnClick" Width="50" Icon="Emoji2" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>
                 <AppBarButton VerticalAlignment="Center" Click="AboutButtonOnClick" Width="50" Icon="Setting" Foreground="White" Style="{StaticResource AppBarButtonStyle}"/>

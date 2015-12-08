@@ -31,6 +31,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using BDWBackgroundTask;
 using BingDailyWallpaper.Control;
 using BingDailyWallpaper.Helper;
 
@@ -179,7 +180,14 @@ namespace BingDailyWallpaper
                     var regEx = new Regex(@"(\<urlBase\>(?<urlbase>.*?)\<\/urlBase\>.*?\<copyright\>(?<copyright>.*?)\<\/copyright\>.*?\<copyrightlink\>(?<copyrightlink>.*?)\<\/copyrightlink\>)", RegexOptions.IgnoreCase | RegexOptions.Multiline);
                     foreach (Match match in regEx.Matches(str))
                     {
-                        BingImageUrl = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
+                        if (PlatformHelper.IsMobile)
+                        {
+                            BingImageUrl = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_720x1280.jpg";
+                        }
+                        else
+                        {
+                            BingImageUrl = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
+                        }
                         var filename = BingImageUrl.Split('/').Last();
                         StorageFolder storageFolder = await CacheImageFolder;
                         var b = await IsFileExist(storageFolder, filename);
@@ -374,6 +382,62 @@ namespace BingDailyWallpaper
         private async void MarktReviewButtonOnClick(object sender, RoutedEventArgs e)
         {
             await Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9NBLGGH67TJK"));
+        }
+
+        private async void SetLockOnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (SetLockScreen)
+                {
+                    MessageDialog md = new MessageDialog("单独设置锁屏需要关闭它的自动更换机制", "确定吗");
+                    md.Commands.Add(new UICommand("确定", async command =>
+                    {
+                        SetLockScreen = false;
+                        var result = await UserProfilePersonalizationSettings.Current.TrySetLockScreenImageAsync(BingImageFile);
+                        Debug.WriteLine("============LockScreen:" + result);
+                    }));
+                    md.Commands.Add(new UICommand("取消"));
+                    await md.ShowAsync();
+                }
+                else
+                {
+                    var result = await UserProfilePersonalizationSettings.Current.TrySetLockScreenImageAsync(BingImageFile);
+                    Debug.WriteLine("============LockScreen:" + result);
+                }
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception.Message);
+            }
+        }
+
+        private async void SetWallPaperOnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (SetWallpaper)
+                {
+                    MessageDialog md = new MessageDialog("单独设置壁纸需要关闭它的自动更换机制", "确定吗");
+                    md.Commands.Add(new UICommand("确定", async command =>
+                    {
+                        SetWallpaper = false;
+                        var result = await UserProfilePersonalizationSettings.Current.TrySetWallpaperImageAsync(BingImageFile);
+                        Debug.WriteLine("============Wallpaper:" + result);
+                    }));
+                    md.Commands.Add(new UICommand("取消"));
+                    await md.ShowAsync();
+                }
+                else
+                {
+                    var result = await UserProfilePersonalizationSettings.Current.TrySetWallpaperImageAsync(BingImageFile);
+                    Debug.WriteLine("============Wallpaper:" + result);
+                }
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception.Message);
+            }
         }
     }
 }

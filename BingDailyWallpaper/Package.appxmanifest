@@ -25,6 +25,12 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
+        <Extension Category="windows.backgroundTasks" EntryPoint="BDWBackgroundTask.BingBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <uap:Extension Category="windows.lockScreenCall" />
         <uap:Extension Category="windows.fileSavePicker">
           <uap:FileSavePicker>
             <uap:SupportedFileTypes>
@@ -32,12 +38,6 @@
             </uap:SupportedFileTypes>
           </uap:FileSavePicker>
         </uap:Extension>
-        <uap:Extension Category="windows.lockScreenCall" />
-        <Extension Category="windows.backgroundTasks" EntryPoint="BDWBackgroundTask.BingBackgroundTask">
-          <BackgroundTasks>
-            <Task Type="timer" />
-          </BackgroundTasks>
-        </Extension>
       </Extensions>
     </Application>
   </Applications>
