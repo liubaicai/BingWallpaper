@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="65186.4668253C32C27" Publisher="CN=0F1DE075-8808-41AD-9E18-2920D00C5BA7" Version="1.0.4.0" />
+  <Identity Name="65186.4668253C32C27" Publisher="CN=0F1DE075-8808-41AD-9E18-2920D00C5BA7" Version="1.0.5.0" />
   <mp:PhoneIdentity PhoneProductId="deea6872-e0d1-49f0-934c-b85bca3153b4" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>每日必应</DisplayName>
@@ -25,12 +25,12 @@
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <uap:Extension Category="windows.lockScreenCall" />
         <Extension Category="windows.backgroundTasks" EntryPoint="BDWBackgroundTask.BingBackgroundTask">
           <BackgroundTasks>
             <Task Type="timer" />
           </BackgroundTasks>
         </Extension>
+        <uap:Extension Category="windows.lockScreenCall" />
       </Extensions>
     </Application>
   </Applications>
