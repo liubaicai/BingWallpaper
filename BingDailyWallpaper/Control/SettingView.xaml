@@ -14,6 +14,13 @@
             <Border Height="5"></Border>
             <TextBlock FontSize="18" Foreground="#FFAAAAAA" Text="应用反馈Q群:373715806"></TextBlock>
             <Border Height="10"></Border>
+            <TextBlock FontSize="18" Foreground="#FFAAAAAA">
+                <Run Text="更多历史图片下载:  "/>
+                <Hyperlink NavigateUri="http://file.liubaicai.net/bingcn/image/?C=M&amp;O=D">
+                    <Run Text="戳我"></Run>
+                </Hyperlink>
+            </TextBlock>
+            <Border Height="10"></Border>
             <StackPanel Orientation="Horizontal">
                 <ToggleSwitch IsOn="{Binding SetLockScreen,Mode=TwoWay}" Header="设为锁屏图片"
                               Foreground="White" Style="{StaticResource ToggleSwitchStyle}" Margin="0,0,0,-5" OffContent="否" OnContent="是"/>
