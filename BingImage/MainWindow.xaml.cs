@@ -46,14 +46,21 @@ namespace BingImage
             http.DownloadStringAsync(new Uri(XmlUrl));
             http.DownloadStringCompleted += (o, args) =>
             {
-                var xml = args.Result;
-                var regEx = new Regex(@"(\<urlBase\>(?<urlbase>.*?)\<\/urlBase\>.*?\<copyright\>(?<copyright>.*?)\<\/copyright\>.*?\<copyrightlink\>(?<copyrightlink>.*?)\<\/copyrightlink\>)", RegexOptions.IgnoreCase | RegexOptions.Multiline);
-                foreach (Match match in regEx.Matches(xml))
+                try
                 {
-                    var imgurl = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
-                    BingImageControl.Source = new BitmapImage(new Uri(imgurl));
-                    DownImage(imgurl);
-                    break;
+                    var xml = args.Result;
+                    var regEx = new Regex(@"(\<urlBase\>(?<urlbase>.*?)\<\/urlBase\>.*?\<copyright\>(?<copyright>.*?)\<\/copyright\>.*?\<copyrightlink\>(?<copyrightlink>.*?)\<\/copyrightlink\>)", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+                    foreach (Match match in regEx.Matches(xml))
+                    {
+                        var imgurl = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
+                        BingImageControl.Source = new BitmapImage(new Uri(imgurl));
+                        DownImage(imgurl);
+                        break;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine("DownloadStringAsync:" + exception.Message);
                 }
             };
         }
@@ -66,10 +73,11 @@ namespace BingImage
                 return;
             }
             var localpath = System.IO.Path.Combine(FolderPath, filename);
-            if (File.Exists(localpath))
+            var bmpPath = localpath.Replace(".jpg", ".bmp");
+            if (File.Exists(bmpPath))
             {
                 BingProgressBar.Visibility = Visibility.Collapsed;
-                ChangeImg(localpath);
+                ChangeImg(bmpPath);
                 Process.GetCurrentProcess().Kill();
             }
             else
@@ -79,7 +87,17 @@ namespace BingImage
                 http.DownloadFileCompleted += (sender, args) =>
                 {
                     BingProgressBar.Visibility = Visibility.Collapsed;
-                    ChangeImg(localpath);
+                    var bitmap = new Bitmap(localpath);
+                    bitmap.Save(bmpPath,ImageFormat.Bmp);
+                    bitmap.Dispose();
+                    ChangeImg(bmpPath);
+                    try
+                    {
+                        File.Delete(localpath);
+                    }
+                    catch (Exception)
+                    {
+                    }
                     Process.GetCurrentProcess().Kill();
                 };
             }
@@ -89,8 +107,7 @@ namespace BingImage
         {
             if (File.Exists(bmpPath))
             {
-
-                var nResult = Win32.SystemParametersInfo(20, 1, bmpPath, 0x1 | 0x2); //更换壁纸
+                var nResult = Win32.SystemParametersInfo(20, 0, bmpPath, 0x02 | 0x02); //更换壁纸
                 if (nResult == 0)
                 {
                     Debug.WriteLine("没有更新成功!");
@@ -100,6 +117,13 @@ namespace BingImage
                     RegistryKey hk = Registry.CurrentUser;
                     RegistryKey run = hk.CreateSubKey(@"Control Panel\Desktop\");
                     run?.SetValue("Wallpaper", bmpPath); //将新图片路径写入注册表
+                }
+                try
+                {
+                    Win32.SHChangeNotify(0x8000000, 0, IntPtr.Zero, IntPtr.Zero);
+                }
+                catch (Exception)
+                {
                 }
             }
             else

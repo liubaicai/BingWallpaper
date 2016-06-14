@@ -11,8 +11,12 @@ namespace BingImage
 {
     public class Win32
     {
-        [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
+        [DllImport("user32.dll")]
         public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+
+        [DllImport("shell32.dll")]
+        public static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);
+
     }
 
 
