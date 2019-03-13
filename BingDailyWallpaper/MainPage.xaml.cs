@@ -112,28 +112,6 @@ namespace BingDailyWallpaper
                 this.DataContext = this;
                 LoadBackBrush();
                 this.Loaded += OnLoaded;
-
-                if (PlatformHelper.IsMobile)
-                {
-                    Windows.Phone.UI.Input.HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
-                    Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-                    SetStatusBar();
-                }
-            }
-        }
-
-        private async void SetStatusBar()
-        {
-            StatusBar statusBar = StatusBar.GetForCurrentView();
-            await statusBar.HideAsync();
-        }
-
-        private void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
-        {
-            if (PopupFrame.Instance260.IsOpen)
-            {
-                PopupFrame.Instance260.Hide();
-                e.Handled = true;
             }
         }
 
@@ -188,7 +166,7 @@ namespace BingDailyWallpaper
                         {
                             BingImageUrl = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
                         }
-                        var filename = BingImageUrl.Split('/').Last();
+                        var filename = BingImageUrl.Split('/').Last().Replace("th?id=","");
                         StorageFolder storageFolder = await CacheImageFolder;
                         var b = await IsFileExist(storageFolder, filename);
                         if (!b)

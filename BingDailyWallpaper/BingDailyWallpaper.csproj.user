@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AppxShowAllApps>True</AppxShowAllApps>
+    <Source>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</Source>
+    <SmallTileSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</SmallTileSource>
+    <MediumTileSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</MediumTileSource>
+    <WideTileSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</WideTileSource>
+    <LargeTileSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</LargeTileSource>
+    <AppIconSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</AppIconSource>
+    <SplashScreenSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</SplashScreenSource>
+    <PackageLogoSource>Y:\Documents\project\BingWallpaper\BingDailyWallpaper\Assets\Square150x150Logo.scale-200.png</PackageLogoSource>
+    <AppxPackageIsForStore>True</AppxPackageIsForStore>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <UseSimulator>false</UseSimulator>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+</Project>

@@ -38,7 +38,7 @@ namespace BDWBackgroundTask
                         Url = "http://cn.bing.com" + match.Groups["urlbase"].Value + "_1920x1080.jpg";
                     }
                     Debug.WriteLine("============" + Url);
-                    var filename = Url.Split('/').Last();
+                    var filename = Url.Split('/').Last().Replace("th?id=", "");
                     StorageFolder storageFolder = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Images", CreationCollisionOption.OpenIfExists);
                     var b = await IsFileExist(storageFolder, filename);
                     if (!b)
