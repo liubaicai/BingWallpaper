@@ -5,7 +5,6 @@
     xmlns:local="using:BingDailyWallpaper.Control"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:uwp="using:BaicaiAppService.SDK.UWP"
     mc:Ignorable="d">
 
     <Grid>
@@ -16,7 +15,7 @@
             <Border Height="10"></Border>
             <TextBlock FontSize="18" Foreground="#FFAAAAAA">
                 <Run Text="更多历史图片下载:  "/>
-                <Hyperlink NavigateUri="http://file.liubaicai.net/bingcn/image/?C=M&amp;O=D">
+                <Hyperlink NavigateUri="https://bing.liubaicai.net/">
                     <Run Text="戳我"></Run>
                 </Hyperlink>
             </TextBlock>
@@ -31,7 +30,6 @@
             <ToggleSwitch IsOn="{Binding AutoSaveToLib,Mode=TwoWay}" Header="浏览时保存图片到图片库" 
                               Foreground="White" Style="{StaticResource ToggleSwitchStyle}" Margin="0,0,0,-5" OffContent="否" OnContent="是"/>
             <Border Height="5"></Border>
-            <uwp:AppListView Margin="-10,0" Foreground="#FFDDDDDD"/>
         </StackPanel>
     </Grid>
 </Page>
